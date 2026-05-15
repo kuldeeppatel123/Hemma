@@ -43,8 +43,8 @@ Install via HACS (recommended) unless noted:
 - **[more-info-card](https://github.com/thomasloven/lovelace-more-info-card)** (Thomas Lovén) - required for custom popups
 - **[lovelace-mushroom](https://github.com/piitaya/lovelace-mushroom)** (Paul Bottein) - required for custom popups
 - **[uix](https://github.com/Lint-Free-Technology/uix)** (Lint Free Technology) - required for custom popup windows
-- **navbar-popup-caret** - custom js required for navbar dropdown menus (included in this repo)
-- **navbar-sidebar-offset** - custom js required for adjusting navigation menu when sidebar is present (included in this repo)
+- **navbar-popup-caret** (included in this repo) - custom js required for navbar dropdown menus
+- **navbar-sidebar-offset** (included in this repo) - custom js required for adjusting navigation menu when sidebar is present
 #### Optional
 - **[kiosk-mode](https://github.com/NemesisRE/kiosk-mode)** (NemesisRE) - Optional but recommended (Hemma looks best with no header/sidebar)
 
