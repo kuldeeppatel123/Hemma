@@ -55,14 +55,14 @@ Install via HACS (recommended) unless noted:
 #### Air Quality
 <img width="615" height="618" alt="Screenshot 2026-05-14 at 2 24 40 PM" src="https://github.com/user-attachments/assets/f7f82bb8-1794-4ff7-b783-df06c4d2c56e" />
 
-#### Network
-<img width="615" height="610" alt="Screenshot 2026-05-14 at 2 24 29 PM" src="https://github.com/user-attachments/assets/f6e818de-b5e7-4f23-834d-d7c13b526145" />
+#### Network (Dark Mode)
+<img width="615" height="621" alt="Screenshot 2026-05-14 at 10 35 54 PM" src="https://github.com/user-attachments/assets/52bd9243-8bb2-4ad0-8949-738c26e8dda9" />
 
 #### Energy Usage
 <img width="615" height="510" alt="Screenshot 2026-05-14 at 2 25 01 PM" src="https://github.com/user-attachments/assets/03679456-4ebc-4952-b358-6a9822fa47a7" />
 
-#### Battery Monitor
-<img width="615" height="566" alt="Screenshot 2026-05-14 at 4 17 56 PM" src="https://github.com/user-attachments/assets/b9d2f0dc-9da0-4cec-af6f-ee0c8932894e" />
+#### Battery Monitor (Dark Mode)
+<img width="615" height="580" alt="image" src="https://github.com/user-attachments/assets/f93daf66-8bd3-4e4f-846f-39b617a5959d" />
 
 #### Plant Monitor
 <img width="615" height="621" alt="Screenshot 2026-05-14 at 2 26 07 PM" src="https://github.com/user-attachments/assets/75f5a105-b99d-4a90-9e29-7e3cf841dbcf" />
