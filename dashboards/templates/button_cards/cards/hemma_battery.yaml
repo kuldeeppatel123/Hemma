@@ -4,7 +4,7 @@
 #
 # Required:
 #   entity — any battery sensor (e.g. sensor.my_device_battery).
-#             It is NOT displayed; button-card needs it as a reactivity
+#             It is not displayed; button-card needs it as a reactivity
 #             anchor so the card re-renders when states change.
 #             Pick any battery sensor that updates regularly.
 #

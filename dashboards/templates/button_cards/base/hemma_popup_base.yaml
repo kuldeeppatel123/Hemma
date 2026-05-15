@@ -14,6 +14,13 @@ hemma_popup_base:
         dismissable: true
         adaptive: true
         size: auto
+        popup_styles:
+          - style: all
+            styles: |
+              ha-adaptive-dialog, ha-dialog { --dialog-surface-margin-top: 100px; }
+              @media (min-width: 1250px) {
+                ha-adaptive-dialog, ha-dialog { --dialog-surface-margin-top: 150px; }
+              }
 
   icon_tap_action:
     haptic: light
@@ -29,3 +36,10 @@ hemma_popup_base:
         dismissable: true
         adaptive: true
         size: auto
+        popup_styles:
+          - style: all
+            styles: |
+              ha-adaptive-dialog, ha-dialog { --dialog-surface-margin-top: 100px; }
+              @media (min-width: 1250px) {
+                ha-adaptive-dialog, ha-dialog { --dialog-surface-margin-top: 150px; }
+              }

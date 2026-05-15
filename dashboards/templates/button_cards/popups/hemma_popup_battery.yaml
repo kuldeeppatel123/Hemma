@@ -122,6 +122,17 @@ hemma_popup_battery:
                 `;
               }
 
+              if (p <= 10)
+                return `
+                  linear-gradient(
+                    90deg,
+                    #C8231C 0%,
+                    #E8302A 35%,
+                    #FF3B30 65%,
+                    #FF5C5C 100%
+                  )
+                `;
+
               if (p <= 20)
                 return `
                   linear-gradient(

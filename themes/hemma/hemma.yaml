@@ -145,7 +145,7 @@ Hemma:
       hemma-nav-inactive-opacity: 0.72
       hemma-nav-icon: rgba(255,255,255,0.96)
       hemma-nav-icon-active: rgba(255,255,255,0.96)
-      hemma-nav-active-fill: rgba(255,255,255,0.2)
+      hemma-nav-active-fill: rgba(255,255,255,0.3)
 
       hemma-popup-bg: rgba(0,0,0,0.2)
       hemma-popup-specular-start: rgba(255,255,255,0.28)
@@ -1215,7 +1215,9 @@ Hemma:
       :host::-webkit-scrollbar {
         display: none !important;
       }
-      ha-dialog {
+      ha-dialog,
+      ha-adaptive-dialog {
+        --dialog-surface-margin-top: 100px !important;
         scrollbar-width: none !important;
         -ms-overflow-style: none !important;
       }

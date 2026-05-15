@@ -502,6 +502,18 @@ hemma_popup_plant:
                   : (val % 1 === 0 ? val.toFixed(0) : val.toFixed(1))
               );
 
+              const barGradient =
+                stColor === C_HEALTHY
+                  ? (type === 'moisture' || type === 'humidity'
+                      ? 'linear-gradient(90deg,#47D7FA 0%,#38BDF8 30%,#60A5FA 65%,#4C8FFF 100%)'
+                      : 'linear-gradient(90deg,#57FFFC 0%,#54F2A0 30%,#65F785 65%,#4CFA57 100%)'
+                    )
+                  : stColor === C_CARE
+                    ? 'linear-gradient(90deg,#FFD166 0%,#FFB347 100%)'
+                    : pct <= 10
+                      ? 'linear-gradient(90deg,#C8621A 0%,#E8782A 35%,#FF9230 65%,#FFAA50 100%)'
+                      : 'linear-gradient(90deg,#FFB347 0%,#FF9230 55%,#FF7A59 100%)';
+
               return {
                 type: 'custom:button-card',
                 entity: eid,
@@ -531,16 +543,7 @@ hemma_popup_plant:
 
                         + (
                           pct > 0
-                            ? '<div style="height:100%;width:' + pct.toFixed(1) + '%;background:' + (
-                                stColor === C_HEALTHY
-                                  ? (type === 'moisture' || type === 'humidity'
-                                      ? 'linear-gradient(90deg,#47D7FA 0%,#38BDF8 30%,#60A5FA 65%,#4C8FFF 100%)'
-                                      : 'linear-gradient(90deg,#57FFFC 0%,#54F2A0 30%,#65F785 65%,#4CFA57 100%)'
-                                    )
-                                  : stColor === C_CARE
-                                    ? 'linear-gradient(90deg,#FFD166 0%,#FFB347 100%)'
-                                    : 'linear-gradient(90deg,#FFB347 0%,#FF9230 55%,#FF7A59 100%)'
-                              ) + ';border-radius:999px;position:relative;z-index:1;"></div>'
+                            ? '<div style="height:100%;width:' + pct.toFixed(1) + '%;background:' + barGradient + ';border-radius:999px;position:relative;z-index:1;"></div>'
                             : ''
                         )
 
