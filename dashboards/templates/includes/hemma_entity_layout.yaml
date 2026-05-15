@@ -54,6 +54,8 @@ mediaquery:
     align-content: end
     align-items: start
     overflow: visible
+    touch-action: auto
+    overscroll-behavior: auto
     scroll-snap-type: none
     scrollbar-width: none
     -ms-overflow-style: none
@@ -80,4 +82,6 @@ mediaquery:
     align-content: start
     align-items: start
     overflow: visible
+    touch-action: auto
+    overscroll-behavior: auto
     scroll-snap-type: none
