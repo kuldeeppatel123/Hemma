@@ -522,7 +522,10 @@ Hemma:
   hemma-entity-text-shadow: 0 0 4px rgba(0,0,0,0.1)
   hemma-entity-header-buffer: 220px
   hemma-entity-height-desktop: 200px
-  hemma-entity-col-width-desktop: 290px
+  # KP DIVERGENCE 2026-05-15: was 290px (fits only 5 cards/row at 1920px
+  # with our 8vw side insets). Reduced to 200px so 6 cards fit on Home
+  # without the 6th card wrapping to a near-empty 2nd row.
+  hemma-entity-col-width-desktop: 200px
   hemma-entity-height-tablet: 160px
   hemma-entity-col-width-tablet: 220px
   hemma-entity-height-mobile: 108px
