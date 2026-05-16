@@ -526,6 +526,15 @@ Hemma:
   # with our 8vw side insets). Reduced to 200px so 6 cards fit on Home
   # without the 6th card wrapping to a near-empty 2nd row.
   hemma-entity-col-width-desktop: 200px
+
+  # KP DIVERGENCE 2026-05-15: HA's lovelace panel inherits background from
+  # `--lovelace-background` which falls back to `--primary-background-color`
+  # only when the theme defines lovelace-background. Without this, HA's
+  # light-mode renders the panel white, which bleeds through Hemma's 10%-
+  # opacity entity cards (turning them into white-on-white in light mode).
+  # Pinning the panel dark keeps Hemma's frosted aesthetic regardless of
+  # HA's selectedTheme.dark flag.
+  lovelace-background: var(--primary-background-color)
   hemma-entity-height-tablet: 160px
   hemma-entity-col-width-tablet: 220px
   hemma-entity-height-mobile: 108px
