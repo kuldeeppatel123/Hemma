@@ -60,7 +60,10 @@ Hemma:
       hemma-nav-icon-active: rgba(255,255,255,0.96)
       hemma-nav-active-fill: rgba(255,255,255,0.3)
 
-      hemma-popup-bg: rgba(0,0,0,0.2)
+      # KP DIVERGENCE 2026-05-15: was rgba(0,0,0,0.2). Matched to
+      # --ha-card-background (rgba(0,0,0,0.1)) so popup outer surface
+      # tone matches dashboard entity cards.
+      hemma-popup-bg: rgba(0,0,0,0.1)
       hemma-popup-specular-start: rgba(255,255,255,0.28)
       hemma-popup-specular-mid: rgba(255,255,255,0.22)
       hemma-popup-specular-end: rgba(255,255,255,0.20)
@@ -169,7 +172,10 @@ Hemma:
       hemma-nav-icon-active: rgba(255,255,255,0.96)
       hemma-nav-active-fill: rgba(255,255,255,0.3)
 
-      hemma-popup-bg: rgba(0,0,0,0.2)
+      # KP DIVERGENCE 2026-05-15: was rgba(0,0,0,0.2). Matched to
+      # --ha-card-background (rgba(0,0,0,0.1)) so popup outer surface
+      # tone matches dashboard entity cards.
+      hemma-popup-bg: rgba(0,0,0,0.1)
       hemma-popup-specular-start: rgba(255,255,255,0.28)
       hemma-popup-specular-mid: rgba(255,255,255,0.22)
       hemma-popup-specular-end: rgba(255,255,255,0.20)
