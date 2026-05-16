@@ -15,7 +15,14 @@ Hemma:
 
       primary-background-color: rgb(40,40,40)
       secondary-background-color: rgb(20,20,20)
-      ha-card-background: rgba(0,0,0,0.4)
+      # KP DIVERGENCE 2026-05-15: was rgba(0,0,0,0.4) which made non-Hemma-
+      # button-card ha-cards (mini-graph-card, ApexCharts, future cards)
+      # 4x more opaque than Hemma's inactive button-cards (--hemma-entity-
+      # background: rgba(0,0,0,.1)). Visible "darker tile" effect alongside
+      # Hemma frosted tiles. Unified at 0.1 for consistent surface tone.
+      # Popups + dialogs use their own --hemma-popup-bg / --ha-dialog-background
+      # — unaffected by this change.
+      ha-card-background: rgba(0,0,0,0.1)
       ha-card-background-active: rgba(240,240,240,0.07)
       badge-background: rgba(0,0,0,0.5)
       text-primary-color: rgba(255,255,255,0.98)
@@ -117,7 +124,14 @@ Hemma:
 
       primary-background-color: rgb(40,40,40)
       secondary-background-color: rgb(20,20,20)
-      ha-card-background: rgba(0,0,0,0.4)
+      # KP DIVERGENCE 2026-05-15: was rgba(0,0,0,0.4) which made non-Hemma-
+      # button-card ha-cards (mini-graph-card, ApexCharts, future cards)
+      # 4x more opaque than Hemma's inactive button-cards (--hemma-entity-
+      # background: rgba(0,0,0,.1)). Visible "darker tile" effect alongside
+      # Hemma frosted tiles. Unified at 0.1 for consistent surface tone.
+      # Popups + dialogs use their own --hemma-popup-bg / --ha-dialog-background
+      # — unaffected by this change.
+      ha-card-background: rgba(0,0,0,0.1)
       ha-card-background-active: rgba(240,240,240,0.07)
       badge-background: rgba(0,0,0,0.5)
       text-primary-color: rgba(255,255,255,0.98)
