@@ -3,7 +3,7 @@
 # CUSTOMIZATION REQUIRED: This file contains separate navbar configurations
 # for different screen sizes. You must update routes in all sections.
 #
-# By default, routes point to /dashboard-hemma/[view-name]. If your dashboard
+# By default, routes point to /dashboard-desktop/[view-name]. If your dashboard
 # has a different URL, search for "routes:" in this file and update them.
 #
 # SECTIONS TO UPDATE:
@@ -12,10 +12,10 @@
 #   3. Tablet Landscape (line ~570) - Has individual room links + Scenes
 #
 # ROUTES TO CUSTOMIZE IN EACH SECTION:
-#   - Home: /dashboard-hemma/home
-#   - Living Room: /dashboard-hemma/living-room
-#   - Kitchen: /dashboard-hemma/kitchen
-#   - Bedroom: /dashboard-hemma/bedroom
+#   - Home: /dashboard-desktop/home
+#   - Living Room: /dashboard-desktop/living-room
+#   - Kitchen: /dashboard-desktop/kitchen
+#   - Bedroom: /dashboard-desktop/master-bedroom
 #
 # ----------------------------------------------------------------------------
 # MOTION SENSOR BADGES
@@ -491,7 +491,7 @@ cards:
       # Buttons (Edit these)
       routes:
         # Home
-        - url: /dashboard-hemma/home
+        - url: /dashboard-desktop/home
           label: Home
           image: /local/hemma/icons/home.svg
           image_selected: /local/hemma/icons/home.svg
@@ -503,17 +503,17 @@ cards:
           image: >
             [[[
               const p = window.location.pathname || '';
-              if (p === '/dashboard-hemma/bedroom') return '/local/hemma/icons/bedroom.svg';
-              if (p === '/dashboard-hemma/kitchen') return '/local/hemma/icons/kitchen.svg';
-              if (p === '/dashboard-hemma/living-room') return '/local/hemma/icons/living-room.svg';
+              if (p === '/dashboard-desktop/master-bedroom') return '/local/hemma/icons/bedroom.svg';
+              if (p === '/dashboard-desktop/kitchen') return '/local/hemma/icons/kitchen.svg';
+              if (p === '/dashboard-desktop/living-room') return '/local/hemma/icons/living-room.svg';
               return '/local/hemma/icons/living-room.svg';
             ]]]
           image_selected: >
             [[[
               const p = window.location.pathname || '';
-              if (p === '/dashboard-hemma/bedroom') return '/local/hemma/icons/bedroom.svg';
-              if (p === '/dashboard-hemma/kitchen') return '/local/hemma/icons/kitchen.svg';
-              if (p === '/dashboard-hemma/living-room') return '/local/hemma/icons/living-room.svg';
+              if (p === '/dashboard-desktop/master-bedroom') return '/local/hemma/icons/bedroom.svg';
+              if (p === '/dashboard-desktop/kitchen') return '/local/hemma/icons/kitchen.svg';
+              if (p === '/dashboard-desktop/living-room') return '/local/hemma/icons/living-room.svg';
               return '/local/hemma/icons/living-room.svg';
             ]]]
           tap_action:
@@ -521,8 +521,8 @@ cards:
           selected: >
             [[[
               const p = window.location.pathname;
-              return p.startsWith('/dashboard-hemma/')
-                && !['/dashboard-hemma/home','/dashboard-hemma/scenes'].includes(p);
+              return p.startsWith('/dashboard-desktop/')
+                && !['/dashboard-desktop/home','/dashboard-desktop/scenes'].includes(p);
             ]]]
           badge:
             show: >
@@ -535,7 +535,7 @@ cards:
             color: '#ffd700'
           popup:
             - label: Bedroom
-              url: /dashboard-hemma/bedroom
+              url: /dashboard-desktop/master-bedroom
               image: /local/hemma/icons/bedroom.svg
               badge:
                 show: >
@@ -546,10 +546,10 @@ cards:
                   ]]]
                 color: '#ffd700'
             - label: Kitchen
-              url: /dashboard-hemma/kitchen
+              url: /dashboard-desktop/kitchen
               image: /local/hemma/icons/kitchen.svg
             - label: Living Room
-              url: /dashboard-hemma/living-room
+              url: /dashboard-desktop/living-room
               image: /local/hemma/icons/living-room.svg
               badge:
                 show: >
@@ -1029,13 +1029,13 @@ cards:
       # Buttons (Edit these)
       routes:
         # Home
-        - url: /dashboard-hemma/home
+        - url: /dashboard-desktop/home
           label: Home
           icon: mdi:home-variant
           icon_selected: mdi:home-variant
 
         # Living Room
-        - url: /dashboard-hemma/living-room
+        - url: /dashboard-desktop/living-room
           label: Living Room
           icon: mdi:sofa
           badge:
@@ -1048,12 +1048,12 @@ cards:
             color: '#ffd700'
 
         # Kitchen
-        - url: /dashboard-hemma/kitchen
+        - url: /dashboard-desktop/kitchen
           label: Kitchen
           icon: mdi:fridge
 
         # Bedroom
-        - url: /dashboard-hemma/bedroom
+        - url: /dashboard-desktop/master-bedroom
           label: Bedroom
           icon: mdi:bed-king
           badge:
@@ -1552,12 +1552,12 @@ cards:
       # Buttons (Edit these)
       routes:
         # Home
-        - url: /dashboard-hemma/home
+        - url: /dashboard-desktop/home
           label: Home
           icon: mdi:home-variant
 
         # Living Room
-        - url: /dashboard-hemma/living-room
+        - url: /dashboard-desktop/living-room
           label: Living Room
           icon: mdi:sofa
           badge:
@@ -1570,12 +1570,12 @@ cards:
             color: '#ffd700'
 
         # Kitchen
-        - url: /dashboard-hemma/kitchen
+        - url: /dashboard-desktop/kitchen
           label: Kitchen
           icon: mdi:fridge
 
         # Bedroom
-        - url: /dashboard-hemma/bedroom
+        - url: /dashboard-desktop/master-bedroom
           label: Bedroom
           icon: mdi:bed-king
           badge:

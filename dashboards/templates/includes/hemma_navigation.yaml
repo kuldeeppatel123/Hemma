@@ -434,11 +434,11 @@ card:
         }
 
       routes:
-        - url: /dashboard-hemma/home
+        - url: /dashboard-desktop/home
           label: Home
           icon: mdi:home-variant
 
-        - url: /dashboard-hemma/living-room
+        - url: /dashboard-desktop/living-room
           label: Living Room
           icon: mdi:sofa
           badge:
@@ -450,11 +450,11 @@ card:
               ]]]
             color: '#ffd700'
 
-        - url: /dashboard-hemma/kitchen
+        - url: /dashboard-desktop/kitchen
           label: Kitchen
           icon: mdi:fridge
 
-        - url: /dashboard-hemma/bedroom
+        - url: /dashboard-desktop/master-bedroom
           label: Bedroom
           icon: mdi:bed-king
           badge:
