@@ -534,7 +534,18 @@ cards:
               ]]]
             color: '#ffd700'
           popup:
-            - label: Bedroom
+            - label: Living Room
+              url: /dashboard-desktop/living-room
+              image: /local/hemma/icons/living-room.svg
+              badge:
+                show: >
+                  [[[
+                    const _s = hass.states['input_text.hemma_motion_living_room']?.state?.trim();
+                    return hass.states['input_boolean.hemma_motion_badges']?.state === 'on'
+                      && !!_s && hass.states[_s]?.state === 'on';
+                  ]]]
+                color: '#ffd700'
+            - label: Master Bedroom
               url: /dashboard-desktop/master-bedroom
               image: /local/hemma/icons/bedroom.svg
               badge:
@@ -548,15 +559,14 @@ cards:
             - label: Kitchen
               url: /dashboard-desktop/kitchen
               image: /local/hemma/icons/kitchen.svg
-            - label: Living Room
-              url: /dashboard-desktop/living-room
-              image: /local/hemma/icons/living-room.svg
+            - label: Office
+              url: /dashboard-desktop/office
+              image: /local/hemma/icons/living-room.svg  # reuse — no office icon shipped
               badge:
                 show: >
                   [[[
-                    const _s = hass.states['input_text.hemma_motion_living_room']?.state?.trim();
-                    return hass.states['input_boolean.hemma_motion_badges']?.state === 'on'
-                      && !!_s && hass.states[_s]?.state === 'on';
+                    const s = hass.states['binary_sensor.presence_sensor_5f_motion']?.state;
+                    return hass.states['input_boolean.hemma_motion_badges']?.state === 'on' && s === 'on';
                   ]]]
                 color: '#ffd700'
 
@@ -1052,9 +1062,9 @@ cards:
           label: Kitchen
           icon: mdi:fridge
 
-        # Bedroom
+        # Master Bedroom
         - url: /dashboard-desktop/master-bedroom
-          label: Bedroom
+          label: Master Bedroom
           icon: mdi:bed-king
           badge:
             show: >
@@ -1062,6 +1072,18 @@ cards:
                 const _s = hass.states['input_text.hemma_motion_bedroom']?.state?.trim();
                 return hass.states['input_boolean.hemma_motion_badges']?.state === 'on'
                   && !!_s && hass.states[_s]?.state === 'on';
+              ]]]
+            color: '#ffd700'
+
+        # Office
+        - url: /dashboard-desktop/office
+          label: Office
+          icon: mdi:desk
+          badge:
+            show: >
+              [[[
+                const s = hass.states['binary_sensor.presence_sensor_5f_motion']?.state;
+                return hass.states['input_boolean.hemma_motion_badges']?.state === 'on' && s === 'on';
               ]]]
             color: '#ffd700'
 
