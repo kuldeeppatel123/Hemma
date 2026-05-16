@@ -101,8 +101,13 @@ Hemma:
       button-card-box-shadow-hover: var(--ha-shadow-dark-hover)
       button-card-box-shadow-hover-mobile: var(--ha-shadow-dark-mobile)
 
-      ha-dialog-background: rgba(0,0,0,0.35)
-      ha-dialog-surface-background: rgba(0,0,0,0.35)
+      # KP DIVERGENCE 2026-05-15: was rgba(0,0,0,0.35). Lowered to 0.1 to
+      # match --ha-card-background and --hemma-popup-bg (also 0.1). HA's
+      # default more-info dialogs (vacuum, motion, lights — entities Hemma
+      # doesn't ship custom popups for) now blend tonally with Hemma's
+      # custom popups + dashboard cards.
+      ha-dialog-background: rgba(0,0,0,0.1)
+      ha-dialog-surface-background: rgba(0,0,0,0.1)
 
       ha-color-border-neutral-normal: transparent
       ha-color-fill-primary-normal-resting: var(--hemma-nav-bg)
@@ -213,8 +218,13 @@ Hemma:
       button-card-box-shadow-hover: var(--ha-shadow-dark-hover)
       button-card-box-shadow-hover-mobile: var(--ha-shadow-dark-mobile)
 
-      ha-dialog-background: rgba(0,0,0,0.35)
-      ha-dialog-surface-background: rgba(0,0,0,0.35)
+      # KP DIVERGENCE 2026-05-15: was rgba(0,0,0,0.35). Lowered to 0.1 to
+      # match --ha-card-background and --hemma-popup-bg (also 0.1). HA's
+      # default more-info dialogs (vacuum, motion, lights — entities Hemma
+      # doesn't ship custom popups for) now blend tonally with Hemma's
+      # custom popups + dashboard cards.
+      ha-dialog-background: rgba(0,0,0,0.1)
+      ha-dialog-surface-background: rgba(0,0,0,0.1)
 
       ha-color-border-neutral-normal: transparent
       ha-color-fill-primary-normal-resting: var(--hemma-nav-bg)
