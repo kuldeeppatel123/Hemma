@@ -1,67 +1,76 @@
 Hemma:
   modes:
     light:
+    # ============================================================================
+    # KP DIVERGENCE 2026-05-15: This 'light' block is intentionally a COPY of the
+    # 'dark' block below. Hemma's stock 'light' mode uses near-transparent cards
+    # (ha-card-background: rgba(20,20,20,0.1)) that turn white-on-white when HA's
+    # user profile is set to Light mode, because the body bg isn't always opaque.
+    # Forcing light==dark keeps the dashboard readable regardless of HA profile.
+    # When syncing upstream, re-evaluate whether the upstream light mode is fixed.
+    # ============================================================================
       # ============================================================================
-      # MODE: LIGHT — SURFACES / BACKGROUNDS / TEXT
+      # MODE: DARK — SURFACES / BACKGROUNDS / TEXT
       # ============================================================================
 
-      primary-background-color: rgb(50,50,50)
-      secondary-background-color: rgb(40,40,40)
-      ha-card-background: rgba(20,20,20,0.1)
-      ha-card-background-active: rgba(255,255,255,0.3)
-      badge-background: rgba(0,0,0,0.35)
-      text-primary-color: rgba(255,255,255,0.95)
+      primary-background-color: rgb(40,40,40)
+      secondary-background-color: rgb(20,20,20)
+      ha-card-background: rgba(0,0,0,0.4)
+      ha-card-background-active: rgba(240,240,240,0.07)
+      badge-background: rgba(0,0,0,0.5)
+      text-primary-color: rgba(255,255,255,0.98)
       secondary-text-color: rgba(240,240,240,0.9)
-      disabled-text-color: rgba(245,245,245,0.65)
+      disabled-text-color: rgba(208,208,208,0.5)
       sidebar-background-color: var(--ha-card-background)
       sidebar-icon-color: var(--text-primary-color)
-      sidebar-text-color: "#c9c9c9"
+      sidebar-text-color: "#a8a8a8"
+
       # ============================================================================
-      # MODE: LIGHT — ENTITY TOKENS
+      # MODE: DARK — ENTITY TOKENS
       # ============================================================================
 
-      hemma-entity-background: rgba(50,50,50,0.15)
+      hemma-entity-background: rgba(0,0,0,.1)
       hemma-entity-background-active: rgba(255,255,255,0.25)
       hemma-entity-name: rgba(255,255,255,0.85)
       hemma-entity-name-active: rgba(255,255,255,1)
-      hemma-entity-state: rgba(255,255,255,0.75)
-      hemma-entity-state-active: rgba(255,255,255,0.9)
+      hemma-entity-state: rgba(255,255,255,0.7)
+      hemma-entity-state-active: rgba(255,255,255,0.8)
       hemma-entity-state-active-color: rgba(255,214,0,1)
 
       # ============================================================================
-      # MODE: LIGHT — NAV / POPUP / CONTROL TOKENS
+      # MODE: DARK — NAV / POPUP / CONTROL TOKENS
       # ============================================================================
 
       navbar-primary-color: var(--hemma-nav-icon-active)
       hemma-nav-bg: rgba(0,0,0,0.3)
       hemma-nav-border: transparent
-      hemma-nav-shadow: 0 14px 18px rgba(0,0,0,0.03)
-      hemma-nav-specular-start: rgba(255,255,255,0.45)
-      hemma-nav-specular-mid: rgba(255,255,255,0.28)
-      hemma-nav-specular-end: rgba(255,255,255,0.45)
-      hemma-nav-inactive-opacity: 0.7
-      hemma-nav-icon: rgba(255,255,255,0.85)
-      hemma-nav-icon-active: rgba(255,255,255,1)
+      hemma-nav-shadow: 0 14px 24px rgba(0,0,0,0.08)
+      hemma-nav-specular-start: rgba(255,255,255,0.3)
+      hemma-nav-specular-mid: rgba(255,255,255,0.20)
+      hemma-nav-specular-end: rgba(255,255,255,0.3)
+      hemma-nav-inactive-opacity: 0.72
+      hemma-nav-icon: rgba(255,255,255,0.96)
+      hemma-nav-icon-active: rgba(255,255,255,0.96)
       hemma-nav-active-fill: rgba(255,255,255,0.3)
 
-      hemma-popup-bg: rgba(200,200,200,0.1)
-      hemma-popup-specular-start: rgba(255,255,255,0.26)
-      hemma-popup-specular-mid: rgba(255,255,255,0.24)
-      hemma-popup-specular-end: rgba(255,255,255,0.22)
-      hemma-popup-entity-background: rgba(0,0,0,0.4)
-      hemma-popup-entity-hover: rgba(0,0,0,0.5)
+      hemma-popup-bg: rgba(0,0,0,0.2)
+      hemma-popup-specular-start: rgba(255,255,255,0.28)
+      hemma-popup-specular-mid: rgba(255,255,255,0.22)
+      hemma-popup-specular-end: rgba(255,255,255,0.20)
+      hemma-popup-entity-background: rgba(40, 40, 40, 0.4)
+      hemma-popup-entity-hover: rgba(65, 65, 65, 0.6)
 
-      hemma-card-specular-start: rgba(255,255,255,0.24)
-      hemma-card-specular-mid: rgba(255,255,255,0.16)
-      hemma-card-specular-end: rgba(255,255,255,0.20)
+      hemma-card-specular-start: rgba(255,255,255,0.20)
+      hemma-card-specular-mid: rgba(255,255,255,0.13)
+      hemma-card-specular-end: rgba(255,255,255,0.18)
 
-      hemma-control-off: rgba(0,0,0,0.1)
+      hemma-control-off: rgba(0,0,0,0.2)
       hemma-control-on: rgba(255,255,255,0.2)
       thermostat-card-off: var(--hemma-control-off)
       thermostat-card-on: var(--hemma-control-on)
 
-      hemma-puck-font-color: rgba(255,255,255,.95)
-      hemma-puck-font-color-active: rgba(0,0,0,.6)
+      hemma-puck-font-color: rgba(0,0,0,.8)
+      hemma-puck-font-color-active: rgba(0,0,0,.7)
       hemma-puck-icon-color: var(--hemma-entity-state)
       hemma-puck-icon-color-active: var(--hemma-entity-name-active)
 
@@ -71,16 +80,19 @@ Hemma:
       hemma-toggle-border-inactive: rgba(255,255,255,0.45)
 
       # ============================================================================
-      # MODE: LIGHT — COMPONENT / SYSTEM TOKENS
+      # MODE: DARK — COMPONENT / SYSTEM TOKENS
       # ============================================================================
 
-      ha-card-box-shadow: var(--ha-card-box-shadow-light)
-      button-card-box-shadow: var(--ha-shadow-light)
-      button-card-box-shadow-mobile: var(--ha-shadow-light-mobile)
-      button-card-box-shadow-active: var(--ha-shadow-light)
-      button-card-box-shadow-active-mobile: var(--ha-shadow-light-mobile)
-      button-card-box-shadow-hover: var(--ha-shadow-light-hover)
-      button-card-box-shadow-hover-mobile: var(--ha-shadow-light-mobile)  
+      ha-card-box-shadow: var(--ha-card-box-shadow-dark)
+      button-card-box-shadow: var(--ha-shadow-dark)
+      button-card-box-shadow-active: var(--ha-shadow-dark)
+      button-card-box-shadow-mobile: var(--ha-shadow-dark-mobile)
+      button-card-box-shadow-active-mobile: var(--ha-shadow-dark-mobile)
+      button-card-box-shadow-hover: var(--ha-shadow-dark-hover)
+      button-card-box-shadow-hover-mobile: var(--ha-shadow-dark-mobile)
+
+      ha-dialog-background: rgba(0,0,0,0.35)
+      ha-dialog-surface-background: rgba(0,0,0,0.35)
 
       ha-color-border-neutral-normal: transparent
       ha-color-fill-primary-normal-resting: var(--hemma-nav-bg)
@@ -92,16 +104,12 @@ Hemma:
       ha-color-text-secondary: var(--secondary-text-color)
       ha-color-fill-neutral-quiet-resting: transparent
       wa-color-text-quiet: var(--secondary-text-color)
-      ha-tooltip-text-color: black
 
-      mdc-text-field-fill-color: rgba(50,50,50,0.4)
-      mdc-select-fill-color: rgba(50,50,50,0.4)
+      mdc-text-field-fill-color: var(--primary-background-color)
+      mdc-select-fill-color: var(--primary-background-color)
       mdc-theme-surface: var(--ha-card-background)
       md-list-container-color: var(--ha-card-background)
       dialog-background-color: var(--ha-card-background)
-      ha-dialog-background: rgba(255,255,255,0.1)
-      ha-dialog-surface-background: rgba(255,255,255,0.1)
-
     dark:
       # ============================================================================
       # MODE: DARK — SURFACES / BACKGROUNDS / TEXT
