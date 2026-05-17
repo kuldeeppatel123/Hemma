@@ -1,10 +1,10 @@
 # -------- Desktop / Tablet --------
 #
-# KP DIVERGENCE 2026-05-15: Hemma's stock desktop layout uses
+# FORK DIVERGENCE 2026-05-15: Hemma's stock desktop layout uses
 # grid-auto-flow: column + single row + overflow-x: auto, which on a mouse-
 # driven desktop browser only scrolls via shift+wheel (scrollbar is hidden
-# by design). Kp tested and the scroll was effectively dead — broken UX on
-# non-touch devices. Patched to wrap rows: grid-auto-flow: row +
+# by design). Locally tested and the scroll was effectively dead — broken
+# UX on non-touch devices. Patched to wrap rows: grid-auto-flow: row +
 # grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)). Cards now
 # wrap to multiple rows and all are visible without needing horizontal
 # scroll. On upstream sync, re-evaluate if upstream added a non-touch

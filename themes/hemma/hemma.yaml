@@ -2,7 +2,7 @@ Hemma:
   modes:
     light:
     # ============================================================================
-    # KP DIVERGENCE 2026-05-15: This 'light' block is intentionally a COPY of the
+    # FORK DIVERGENCE 2026-05-15: This 'light' block is intentionally a COPY of the
     # 'dark' block below. Hemma's stock 'light' mode uses near-transparent cards
     # (ha-card-background: rgba(20,20,20,0.1)) that turn white-on-white when HA's
     # user profile is set to Light mode, because the body bg isn't always opaque.
@@ -15,7 +15,7 @@ Hemma:
 
       primary-background-color: rgb(40,40,40)
       secondary-background-color: rgb(20,20,20)
-      # KP DIVERGENCE 2026-05-15: was rgba(0,0,0,0.4) which made non-Hemma-
+      # FORK DIVERGENCE 2026-05-15: was rgba(0,0,0,0.4) which made non-Hemma-
       # button-card ha-cards (mini-graph-card, ApexCharts, future cards)
       # 4x more opaque than Hemma's inactive button-cards (--hemma-entity-
       # background: rgba(0,0,0,.1)). Visible "darker tile" effect alongside
@@ -60,7 +60,7 @@ Hemma:
       hemma-nav-icon-active: rgba(255,255,255,0.96)
       hemma-nav-active-fill: rgba(255,255,255,0.3)
 
-      # KP DIVERGENCE 2026-05-15: was rgba(0,0,0,0.2). Matched to
+      # FORK DIVERGENCE 2026-05-15: was rgba(0,0,0,0.2). Matched to
       # --ha-card-background (rgba(0,0,0,0.1)) so popup outer surface
       # tone matches dashboard entity cards.
       hemma-popup-bg: rgba(0,0,0,0.1)
@@ -101,7 +101,7 @@ Hemma:
       button-card-box-shadow-hover: var(--ha-shadow-dark-hover)
       button-card-box-shadow-hover-mobile: var(--ha-shadow-dark-mobile)
 
-      # KP DIVERGENCE 2026-05-15: was rgba(0,0,0,0.35). Lowered to 0.1 to
+      # FORK DIVERGENCE 2026-05-15: was rgba(0,0,0,0.35). Lowered to 0.1 to
       # match --ha-card-background and --hemma-popup-bg (also 0.1). HA's
       # default more-info dialogs (vacuum, motion, lights — entities Hemma
       # doesn't ship custom popups for) now blend tonally with Hemma's
@@ -132,7 +132,7 @@ Hemma:
 
       primary-background-color: rgb(40,40,40)
       secondary-background-color: rgb(20,20,20)
-      # KP DIVERGENCE 2026-05-15: was rgba(0,0,0,0.4) which made non-Hemma-
+      # FORK DIVERGENCE 2026-05-15: was rgba(0,0,0,0.4) which made non-Hemma-
       # button-card ha-cards (mini-graph-card, ApexCharts, future cards)
       # 4x more opaque than Hemma's inactive button-cards (--hemma-entity-
       # background: rgba(0,0,0,.1)). Visible "darker tile" effect alongside
@@ -177,7 +177,7 @@ Hemma:
       hemma-nav-icon-active: rgba(255,255,255,0.96)
       hemma-nav-active-fill: rgba(255,255,255,0.3)
 
-      # KP DIVERGENCE 2026-05-15: was rgba(0,0,0,0.2). Matched to
+      # FORK DIVERGENCE 2026-05-15: was rgba(0,0,0,0.2). Matched to
       # --ha-card-background (rgba(0,0,0,0.1)) so popup outer surface
       # tone matches dashboard entity cards.
       hemma-popup-bg: rgba(0,0,0,0.1)
@@ -218,7 +218,7 @@ Hemma:
       button-card-box-shadow-hover: var(--ha-shadow-dark-hover)
       button-card-box-shadow-hover-mobile: var(--ha-shadow-dark-mobile)
 
-      # KP DIVERGENCE 2026-05-15: was rgba(0,0,0,0.35). Lowered to 0.1 to
+      # FORK DIVERGENCE 2026-05-15: was rgba(0,0,0,0.35). Lowered to 0.1 to
       # match --ha-card-background and --hemma-popup-bg (also 0.1). HA's
       # default more-info dialogs (vacuum, motion, lights — entities Hemma
       # doesn't ship custom popups for) now blend tonally with Hemma's
@@ -552,12 +552,12 @@ Hemma:
   hemma-entity-text-shadow: 0 0 4px rgba(0,0,0,0.1)
   hemma-entity-header-buffer: 220px
   hemma-entity-height-desktop: 200px
-  # KP DIVERGENCE 2026-05-15: was 290px (fits only 5 cards/row at 1920px
+  # FORK DIVERGENCE 2026-05-15: was 290px (fits only 5 cards/row at 1920px
   # with our 8vw side insets). Reduced to 200px so 6 cards fit on Home
   # without the 6th card wrapping to a near-empty 2nd row.
   hemma-entity-col-width-desktop: 200px
 
-  # KP DIVERGENCE 2026-05-15: HA's lovelace panel inherits background from
+  # FORK DIVERGENCE 2026-05-15: HA's lovelace panel inherits background from
   # `--lovelace-background` which falls back to `--primary-background-color`
   # only when the theme defines lovelace-background. Without this, HA's
   # light-mode renders the panel white, which bleeds through Hemma's 10%-

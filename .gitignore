@@ -1,0 +1,27 @@
+# Secrets / credentials
+.env
+.env.*
+*.pem
+*.key
+*.crt
+id_rsa*
+id_ed25519*
+secrets.yaml
+
+# Home Assistant runtime state — never commit
+inventory/
+.storage/
+home-assistant.log
+home-assistant_v2.db*
+*.db-journal
+backups/
+
+# Claude Code workspace state
+.claude/
+.claude.json
+.claude-memory/
+
+# OS noise
+.DS_Store
+Thumbs.db
+desktop.ini

@@ -472,9 +472,9 @@ card:
           badge:
             show: >
               [[[
-                // Office uses SwitchBot presence sensor directly (no input_text helper yet)
-                const s = hass.states['binary_sensor.presence_sensor_5f_motion']?.state;
-                return hass.states['input_boolean.hemma_motion_badges']?.state === 'on' && s === 'on';
+                const _s = hass.states['input_text.hemma_motion_office']?.state?.trim();
+                return hass.states['input_boolean.hemma_motion_badges']?.state === 'on'
+                  && !!_s && hass.states[_s]?.state === 'on';
               ]]]
             color: '#ffd700'
 

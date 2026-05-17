@@ -50,6 +50,9 @@ input_text:
   hemma_motion_kitchen:
     name: "Hemma Motion - Kitchen"
     initial: ""   # set to your kitchen motion sensor entity ID to enable
+  hemma_motion_office:
+    name: "Hemma Motion - Office"
+    initial: ""   # set to your office motion sensor entity ID to enable
 
 input_number:
   hemma_thermostat_target_temperature:
