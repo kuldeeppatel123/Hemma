@@ -37,6 +37,38 @@ hemma_popup_network:
               return isNaN(n) ? null : n;
             };
 
+            // FORK DIVERGENCE: read the entity's actual unit instead of
+            // hardcoding 'Mbit/s'. Allows the popup to render correctly for
+            // sensors reporting in MB/s, KB/s, GB/s, etc. — including
+            // pre-formatted template sensors that bake the unit into the
+            // state string (e.g. "18.3 GB" — see rawState() below).
+            const unitOf = (id, fallback = 'Mbit/s') => {
+              if (!id) return fallback;
+              const u = states[id]?.attributes?.unit_of_measurement;
+              return u || fallback;
+            };
+
+            // FORK DIVERGENCE: read the raw state string. Used so that
+            // pre-formatted template sensors (e.g. "843.7 GB") are rendered
+            // verbatim instead of parseFloat'd back to a bare number.
+            const rawState = (id) => {
+              if (!id) return null;
+              const s = states[id]?.state;
+              if (!s || s === 'unavailable' || s === 'unknown') return null;
+              return s;
+            };
+
+            // FORK DIVERGENCE: heuristically decide whether the state string
+            // already contains a unit (e.g. "18.3 GB"). If so, the popup
+            // renders the raw string and skips appending a separate unit.
+            const stateHasUnit = (id) => {
+              const s = rawState(id);
+              if (!s) return false;
+              // Pre-formatted if it contains a letter that isn't part of a
+              // pure number — true for "843.7 GB", "3.7 KB/s", false for "350"
+              return /[a-zA-Z]/.test(s);
+            };
+
             const displayPrecision = (id) => {
               if (!id) return null;
               const reg = hass?.entities?.[id];
@@ -505,8 +537,9 @@ hemma_popup_network:
                 c: `
                   <div>
                     <div style="display:flex;align-items:baseline;gap:4px;padding-right:6px;">
-                      <span style="font-size:26px;font-weight:400;color:#ffffff;line-height:1.15;">${fmt(dl, dlId)}</span>
-                      <span style="font-size:14px;color:rgba(255,255,255,0.7);">Mbit/s</span>
+                      ${stateHasUnit(dlId)
+                        ? `<span style="font-size:26px;font-weight:400;color:#ffffff;line-height:1.15;">${rawState(dlId)}</span>`
+                        : `<span style="font-size:26px;font-weight:400;color:#ffffff;line-height:1.15;">${fmt(dl, dlId)}</span><span style="font-size:14px;color:rgba(255,255,255,0.7);">${unitOf(dlId)}</span>`}
                     </div>
                     <div style="display:flex;align-items:center;gap:6px;margin-top:7px;">
                       <span style="width:8px;height:8px;background:var(--hemma-badge-network-low-color, #44e371);border-radius:50%;display:inline-block;flex-shrink:0;"></span>
@@ -541,8 +574,9 @@ hemma_popup_network:
                 c: `
                   <div>
                     <div style="display:flex;align-items:baseline;gap:4px;padding-left:6px;">
-                      <span style="font-size:26px;font-weight:400;color:#ffffff;line-height:1.15;">${fmt(ul, ulId)}</span>
-                      <span style="font-size:14px;color:rgba(255,255,255,0.7);">Mbit/s</span>
+                      ${stateHasUnit(ulId)
+                        ? `<span style="font-size:26px;font-weight:400;color:#ffffff;line-height:1.15;">${rawState(ulId)}</span>`
+                        : `<span style="font-size:26px;font-weight:400;color:#ffffff;line-height:1.15;">${fmt(ul, ulId)}</span><span style="font-size:14px;color:rgba(255,255,255,0.7);">${unitOf(ulId)}</span>`}
                     </div>
                     <div style="display:flex;align-items:center;gap:6px;margin-top:7px;margin-left:6px;">
                       <span style="width:8px;height:8px;background:var(--hemma-badge-network-active-color, #ffd600);border-radius:50%;display:inline-block;flex-shrink:0;"></span>
@@ -974,11 +1008,15 @@ hemma_popup_network:
 
                       white-space:nowrap;
                     ">
-                      ${fmt(val, entityId)}
+                      ${
+                        stateHasUnit(entityId)
+                          ? rawState(entityId)
+                          : fmt(val, entityId)
+                      }
                     </span>
 
                     ${
-                      val != null
+                      val != null && !stateHasUnit(entityId)
                         ? `
                           <span style="
                             font-size:12px;
@@ -986,7 +1024,7 @@ hemma_popup_network:
 
                             white-space:nowrap;
                           ">
-                            Mbit/s
+                            ${unitOf(entityId)}
                           </span>
                         `
                         : ''
